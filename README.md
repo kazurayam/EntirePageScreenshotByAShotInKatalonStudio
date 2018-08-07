@@ -33,5 +33,6 @@ I have found AShot works like a charm.
 4. open [`Test Cases/TC1`](https://github.com/kazurayam/EntirePageScreenshotByAShotInKatalonStudio/blob/master/Scripts/TC1/Script1533622426100.groovy) and run it with any browser you like.
 5. a png file will be written into `./Reports/screenshot.png`
 
-Here I show the screenshot taken by AShot:
+Here I attached the screenshot taken by AShot:
+
 <img src="https://github.com/kazurayam/EntirePageScreenshotByAShotInKatalonStudio/blob/master/docs/screenshot.png" width="40" style="border: 1px solid #999">
