@@ -7,7 +7,7 @@ This demo was developed with Katalon Studio version 5.4.2.
 
 ## Problem to solve
 
-I wanted to take an screenshot of a Web page. The target page was supposed to have the height over 5000px.
+I wanted to take an screenshot of a Web page. The target page was supposed to have the height over 10,000px.
 
 I tried WebUI.takescreenshot() and found it can only take visual portion; it can not take the image of entire page.
 
@@ -21,7 +21,9 @@ By searching I found a Java Library called AShot.
 >2. Decorates screenshots
 >3. Provides flexible screenshot comparison
 
-I was impress with the simplicity of the sample code of capturing the entire page by AShot. So I tried AShot in Katalon Studio.
+I was impressed with the simplicity of the sample code of capturing the entire page by AShot. So I tried AShot in Katalon Studio.
+
+I have found AShot works like a charm.
 
 ## How to run the demo
 

@@ -9,7 +9,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 WebUI.openBrowser('')
 
-WebUI.setViewPortSize(375, 20000) // width, height
+WebUI.setViewPortSize(375, 12000) // width, height
 
 WebUI.navigateToUrl('https://fontawesome.com/icons?d=gallery')
 
@@ -24,4 +24,3 @@ CustomKeywords.'com.kazurayam.ksbackyard.AShotDriver.takeEntirePage'(
 	png.toFile())
 
 WebUI.closeBrowser()
-
