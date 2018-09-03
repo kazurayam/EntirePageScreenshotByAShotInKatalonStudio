@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>TC3</name>
+   <name>TC1_screenshot_taken_when_failed</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>671c9fd0-c69e-4db0-aefb-e8ca6cca4439</testCaseGuid>
+   <testCaseGuid>e0faf4f3-fa70-4bf9-8976-2ce5fa4b918c</testCaseGuid>
 </TestCaseEntity>

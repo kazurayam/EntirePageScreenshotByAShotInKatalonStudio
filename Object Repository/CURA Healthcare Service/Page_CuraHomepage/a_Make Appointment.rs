@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>h3_We Care About Your Health</name>
+   <name>a_Make Appointment</name>
    <tag></tag>
-   <elementGuidId>fa0061b7-8d71-47b7-bb32-813a7568bb26</elementGuidId>
+   <elementGuidId>bc5bbeda-6b5e-4c01-8ed6-35db5378139f</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//a[@id = 'btn-make-appointment' and @href = './profile.php#login' and (text() = 'Make Appointment' or . = 'Make Appointment')]</value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -11,20 +17,13 @@
       <matchCondition>equals</matchCondition>
       <name>tag</name>
       <type>Main</type>
-      <value>h3</value>
+      <value>a</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>text</name>
+      <name>id</name>
       <type>Main</type>
-      <value>We Care About Your Health</value>
-   </webElementProperties>
-   <webElementProperties>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>xpath</name>
-      <type>Main</type>
-      <value>id(&quot;top&quot;)/div[@class=&quot;text-vertical-center&quot;]/h3[1]</value>
+      <value>btn-make-appointment</value>
    </webElementProperties>
 </WebElementEntity>
