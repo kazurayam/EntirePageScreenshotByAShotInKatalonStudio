@@ -13,13 +13,13 @@ WebUI.navigateToUrl(topPageUrl)
 // this verification will PASS
 WebUI.verifyElementPresent(
 	findTestObject('CURA Healthcare Service/Page_CuraHomepage/a_Make Appointment'),
-	10,
+	5,
 	FailureHandling.CONTINUE_ON_FAILURE)
 
 // this verification will FAIL
 WebUI.verifyElementPresent(
 	findTestObject('CURA Healthcare Service/Page_CuraHomepage/h3_We Care About Your Doll'),
-	10,
+	5,
 	FailureHandling.CONTINUE_ON_FAILURE)
 
 WebUI.closeBrowser()

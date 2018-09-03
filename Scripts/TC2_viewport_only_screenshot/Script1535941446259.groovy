@@ -25,7 +25,7 @@ WebUI.verifyElementPresent(
 
 // take screenshot and save a PNG file into Reports dir
 Path projectDir = Paths.get(RunConfiguration.getProjectDir())
-Path reportDir = projectDir.resolve('Reports')
+Path reportDir = projectDir.resolve('Screenshots')
 Files.createDirectories(reportDir)
 Path pngFile = reportDir.resolve('TC2_viewport_only_screenshot_.png')
 
