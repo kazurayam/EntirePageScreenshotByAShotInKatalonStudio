@@ -1,6 +1,6 @@
+import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
-import java.nio.file.Files
 
 import com.kms.katalon.core.annotation.BeforeTestCase
 import com.kms.katalon.core.annotation.BeforeTestSuite

@@ -4,9 +4,9 @@
    <name>TS1_screenshot_taken_when_failed</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-09-04T13:48:47</lastRun>
+   <lastRun>2018-09-04T17:15:23</lastRun>
    <mailRecipient></mailRecipient>
-   <numberOfRerun>1</numberOfRerun>
+   <numberOfRerun>2</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>true</rerunFailedTestCasesOnly>
