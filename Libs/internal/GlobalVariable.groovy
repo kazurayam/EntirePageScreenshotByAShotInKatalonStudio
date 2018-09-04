@@ -13,14 +13,26 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
  */
 public class GlobalVariable {
      
+    /**
+     * <p>Profile default : Number of runs of test cases including re-runs</p>
+     */
+    public static Object NUMBER_OF_TESTCASE_RUNS
+     
+    /**
+     * <p></p>
+     */
+    public static Object CURRENT_TESTCASE_ID
+     
 
     static {
         def allVariables = [:]        
-        allVariables.put('default', [:])
+        allVariables.put('default', ['NUMBER_OF_TESTCASE_RUNS' : [('sample') : 0], 'CURRENT_TESTCASE_ID' : ''])
         
         String profileName = RunConfiguration.getExecutionProfile()
         
         def selectedVariables = allVariables[profileName]
+        NUMBER_OF_TESTCASE_RUNS = selectedVariables['NUMBER_OF_TESTCASE_RUNS']
+        CURRENT_TESTCASE_ID = selectedVariables['CURRENT_TESTCASE_ID']
         
     }
 }

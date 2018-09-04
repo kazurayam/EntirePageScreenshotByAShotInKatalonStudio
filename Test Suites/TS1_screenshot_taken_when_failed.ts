@@ -4,12 +4,12 @@
    <name>TS1_screenshot_taken_when_failed</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-09-03T16:03:08</lastRun>
+   <lastRun>2018-09-04T13:48:47</lastRun>
    <mailRecipient></mailRecipient>
-   <numberOfRerun>0</numberOfRerun>
+   <numberOfRerun>1</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
-   <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
+   <rerunFailedTestCasesOnly>true</rerunFailedTestCasesOnly>
    <testSuiteGuid>0b822a17-728f-489a-ba3f-49296ebb35fa</testSuiteGuid>
    <testCaseLink>
       <guid>340b6297-bcf1-456f-bde7-a46290dbfad5</guid>

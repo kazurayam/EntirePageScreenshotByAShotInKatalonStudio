@@ -4,4 +4,14 @@
    <name>default</name>
    <tag></tag>
    <defaultProfile>true</defaultProfile>
+   <GlobalVariableEntity>
+      <description>Number of runs of test cases including re-runs</description>
+      <initValue>[('sample') : 0]</initValue>
+      <name>NUMBER_OF_TESTCASE_RUNS</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>CURRENT_TESTCASE_ID</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
