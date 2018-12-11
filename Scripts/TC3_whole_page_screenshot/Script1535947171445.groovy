@@ -15,11 +15,13 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import ru.yandex.qatools.ashot.AShot
 import ru.yandex.qatools.ashot.Screenshot
+import ru.yandex.qatools.ashot.coordinates.WebDriverCoordsProvider
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies
 
 // take screenshot of entire web page
 void takeEntirePage(WebDriver webDriver, File file, Integer timeout = 300) {
 	Screenshot screenshot = new AShot().
+			coordsProvider(new WebDriverCoordsProvider()).
 			shootingStrategy(ShootingStrategies.viewportPasting(timeout)).
 			takeScreenshot(webDriver)
 	ImageIO.write(screenshot.getImage(), "PNG", file)
