@@ -1,0 +1,66 @@
+plugins {
+  id 'groovy'
+  id 'com.github.johnrengelman.shadow' version '4.0.4'
+  id "com.katalon.gradle-plugin" version "0.0.7"
+}
+
+group = 'com.kazurayam'
+version = '0.1.0'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+ext {
+    groovyVersion = '2.4.7'
+}
+
+configurations {
+    generateDocs
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    generateDocs "org.codehaus.groovy:groovy-all:${groovyVersion}"
+}
+
+def defaultEncoding = 'UTF-8'
+tasks.withType(AbstractCompile).each { it.options.encoding = defaultEncoding }
+tasks.withType(GroovyCompile).each {it.groovyOptions.encoding = defaultEncoding }
+
+sourceSets {
+    main {
+        groovy {
+            srcDirs = ['Keywords']
+        }
+    }
+}
+
+shadowJar {
+        exclude 'Temp*.class'
+        exclude 'their/*.class'
+}
+
+katalon {
+    dependencyPrefix = "com.katalon"
+    minimize = false
+}
+
+task groovydoc(type:Groovydoc, overwrite:true) {
+    group = 'com.kazurayam'
+    source = sourceSets.main.groovy
+    classpath = configurations.compile
+    groovyClasspath = project.configurations.generateDocs
+    include 'com/kazurayam/ks/globalvariable/*'
+    exclude '**/*Test.groovy'
+}
+
+task publishGroovydoc(type: Copy) {
+    from 'build/docs/groovydoc'
+    into 'docs/api'
+}
+
+groovydoc.finalizedBy publishGroovydoc

@@ -4,32 +4,22 @@ import java.awt.image.BufferedImage
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
+import java.text.DecimalFormat
 
 import javax.imageio.ImageIO
 
 import org.openqa.selenium.WebDriver
 
 import com.kms.katalon.core.configuration.RunConfiguration
-import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import ru.yandex.qatools.ashot.coordinates.WebDriverCoordsProvider
-import ru.yandex.qatools.ashot.AShot
+
+import my.AShotWrapper
+import my.DevicePixelRatioResolver
 import ru.yandex.qatools.ashot.Screenshot
 import ru.yandex.qatools.ashot.comparison.ImageDiff
 import ru.yandex.qatools.ashot.comparison.ImageDiffer
-import ru.yandex.qatools.ashot.shooting.ShootingStrategies
-import com.kms.katalon.core.util.KeywordUtil
-import java.text.DecimalFormat
-
-// take screenshot of entire web page
-void takeEntirePage(WebDriver webDriver, File file, Integer timeout = 300) {
-	Screenshot screenshot = new AShot().
-			coordsProvider(new WebDriverCoordsProvider()).
-			shootingStrategy(ShootingStrategies.viewportPasting(timeout)).
-			takeScreenshot(webDriver)
-	ImageIO.write(screenshot.getImage(), "PNG", file)
-}
 
 // resolve file name under the target directory
 File resolveScreenshotFile(String fileName) {
@@ -57,15 +47,17 @@ Double diffRatioPercent(ImageDiff diff) {
 WebUI.openBrowser('')
 WebUI.setViewPortSize(1024, 768)
 
+WebDriver driver = DriverFactory.getWebDriver()
+float dpr = DevicePixelRatioResolver.resolveDPR(driver)
+
 // Take screenshot of the orignal site
 def originalUrl = 'https://katalon-demo-cura.herokuapp.com/'
 WebUI.navigateToUrl(originalUrl)
 WebUI.verifyElementPresent(
-	findTestObject('CURA Healthcare Service/Page_CuraHomepage/a_Make Appointment'),
-	10,
-	FailureHandling.CONTINUE_ON_FAILURE)
+	findTestObject('CURA Healthcare Service/Page_CuraHomepage/a_Make Appointment'), 10)
 File original = resolveScreenshotFile('TC4_original.png')
-takeEntirePage(DriverFactory.getWebDriver(), original, 500)
+
+AShotWrapper.saveEntirePageImage(DriverFactory.getWebDriver(), original, 500, dpr)
 WebUI.comment(">>> wrote the original image into ${original.toString()}")
 
 // Take screenshot of the mimic site
@@ -73,11 +65,10 @@ WebUI.comment(">>> wrote the original image into ${original.toString()}")
 def mimicUrl = 'http://demoaut-mimic.kazurayam.com/'
 WebUI.navigateToUrl(mimicUrl)
 WebUI.verifyElementPresent(
-	findTestObject('CURA Healthcare Service/Page_CuraHomepage/a_Make Appointment'),
-	10,
-	FailureHandling.CONTINUE_ON_FAILURE)
+	findTestObject('CURA Healthcare Service/Page_CuraHomepage/a_Make Appointment'), 10)
 File mimic = resolveScreenshotFile('TC4_mimic.png')
-takeEntirePage(DriverFactory.getWebDriver(), mimic, 500)
+
+AShotWrapper.saveEntirePageImage(driver, mimic, 500, dpr)
 WebUI.comment(">>> wrote the mimic image into ${mimic.toString()}")
 
 // make ImageDiff

@@ -1,1 +1,0 @@
->>> Test Cases/TC1_screenshot_taken_when_failed ran for the 1st time

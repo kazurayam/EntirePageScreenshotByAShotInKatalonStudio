@@ -3,12 +3,15 @@
 
 .classpath
 .project
+.settings/
+console.properties
 
-/bin/lib/Temp*.class
-/libs/Temp*.groovy
+bin/
+Libs/
 
 Materials/
 Reports/
 /bin/
 
 message.txt
+settings/
