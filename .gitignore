@@ -1,3 +1,4 @@
+.DS_Store
 *~
 *.swp
 
@@ -15,3 +16,4 @@ Reports/
 
 message.txt
 settings/
+build/
