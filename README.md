@@ -1,13 +1,16 @@
-Taking entire page screenshot by AShot in Katalon Studio
-=====================
+# Taking entire page screenshots and measure diff by AShot
+
 
 This is a simple [Katalon Studio](https://www.katalon.com/) project for demonstration purpose. You can clone this out onto you PC and run it using your Katalon Studio.
 
 This demo was originally developed with Katalon Studio version 5.4.2, tested ok with v7.9.1.
 
+
 ## Problem to solve
 
 I wanted to take an screenshot of a Web page. The target page was supposed to have the height over 10,000px.
+
+I wanted to take screenshots of a web page in the Development environment and the Production Environment, and compare how much different they are. If a significant difference is found exceeding a certain criteria (e.g, diff > 3.0%), then I want my test to fail to notify developers of unexpected change found.
 
 I tried Katalon's built-in `WebUI.takescreenshot()`. I found, it can only take visual portion; it can not take the image of entire page.
 
