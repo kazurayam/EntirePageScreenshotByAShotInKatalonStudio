@@ -17,3 +17,4 @@ Reports/
 message.txt
 settings/
 build/
+.gradle/
