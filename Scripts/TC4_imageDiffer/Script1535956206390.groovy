@@ -71,12 +71,14 @@ File mimic = resolveScreenshotFile('TC4_mimic.png')
 AShotWrapper.saveEntirePageImage(driver, mimic, 500, dpr)
 WebUI.comment(">>> wrote the mimic image into ${mimic.toString()}")
 
-// make ImageDiff
+// make AShot's ImageDiff
 BufferedImage expectedImage = ImageIO.read(original)
 BufferedImage actualImage   = ImageIO.read(mimic)
 Screenshot expectedScreenshot = new Screenshot(expectedImage)
 Screenshot actualScreenshot = new Screenshot(actualImage)
+
 ImageDiff diff = new ImageDiffer().makeDiff(expectedScreenshot, actualScreenshot)
+
 BufferedImage markedImage = diff.getMarkedImage()
 
 DecimalFormat dformat = new DecimalFormat("##0.00")
@@ -90,7 +92,7 @@ if (diffRatioPercent > criteriaPercent) {
 }
 
 // save the diff image into file
-File diffFile = resolveScreenshotFile("TC4_imageDiff(${dformat.format(diffRatioPercent)}).png")
+File diffFile = resolveScreenshotFile("TC4_imageDiff.png")
 ImageIO.write(markedImage, "PNG", diffFile)
 WebUI.comment(">>> wrote the ImageDiff into ${diffFile.toString()}")
 

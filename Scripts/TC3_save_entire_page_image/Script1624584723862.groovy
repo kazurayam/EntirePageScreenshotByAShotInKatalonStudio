@@ -35,7 +35,7 @@ WebUI.verifyElementPresent(
 Path projectDir = Paths.get(RunConfiguration.getProjectDir())
 Path reportDir = projectDir.resolve('Screenshots')
 Files.createDirectories(reportDir)
-Path pngFile = reportDir.resolve('TC3_whole_page_screenshot.png')
+Path pngFile = reportDir.resolve('TC3_save_entire_page_image.png')
 
 WebDriver driver = DriverFactory.getWebDriver()
 

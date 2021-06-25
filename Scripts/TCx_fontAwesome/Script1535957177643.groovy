@@ -12,6 +12,9 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import my.AShotWrapper
 import my.DevicePixelRatioResolver
 
+/**
+ * demo of taking screenshot of a web page with extreme height
+ */
 
 WebUI.openBrowser('')
 WebUI.setViewPortSize(375, 667) // width, height
